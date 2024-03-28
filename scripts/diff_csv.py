@@ -4,7 +4,7 @@ import argparse
 from process_csv import pangenome_csv
 
 
-def counting_kmers(data, lineage):
+def gather_difference(data, lineage):
     lineage_list = {}
     lineage = lineage
 
@@ -35,21 +35,21 @@ def counting_kmers(data, lineage):
 
     differences.insert(0, [v for v in lineage_list[lineage].values()][0]) #slap the first genome kmer count on the front
 
-    #for i in range(5):
-    #    print(f"In {lineage}, genome {i} has {differences[i]} new kmers.")
+    for i in range(5):
+        print(f"In {lineage}, genome {i} has {differences[i]} new kmers.")
+
     return differences, lineage, lineage_list
 
-p = argparse.ArgumentParser(description='Gather difference data from lineage counts')
-p.add_argument('data', metavar='CSV_DATA', help='This is the processed CSV data from the pangenome CSV file')
-p.add_argument('-l', '--lineage', metavar='LINEAGE_STRING', help='This is the lineage name to isolate from the dataset')
-args = p.parse_args()
 
-#pangenome_csv(args.filename)
-#counting_kmers(args.data, args.lineage)
-# Call pangenome_csv to process the CSV file
-csv_data = pangenome_csv(args.data)
+def parse_args():
+    p = argparse.ArgumentParser(description='Gather difference data from lineage counts')
+    p.add_argument('data', metavar='CSV_DATA', help='This is the processed CSV data from the pangenome CSV file')
+    p.add_argument('-l', '--lineage', metavar='LINEAGE_STRING', help='This is the lineage name to isolate from the dataset')
+    args = p.parse_args()
 
-# Call counting_kmers with the processed CSV data
-diff, lineage, lineage_list = counting_kmers(csv_data, args.lineage)
+    csv_data = pangenome_csv(filename=args.data)
+    gather_difference(csv_data, args.lineage)
 
-#diff, lineage, lineage_list = counting_kmers(csv_data, 's__Escherichia coli')
+
+if __name__=='__main__':
+     parse_args()
