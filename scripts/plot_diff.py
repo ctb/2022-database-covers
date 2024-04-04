@@ -81,7 +81,6 @@ def parse_args():
     novel_parser.set_defaults(func=plot_novels)
 
 
-
     total_parser = subparsers.add_parser('total', help='Plot the total features of a pangenome')
     group = total_parser.add_mutually_exclusive_group(required=True)
     total_parser.add_argument('-o', '--output', help='The output path for the plot image file')
@@ -91,9 +90,9 @@ def parse_args():
     group.add_argument('-s', '--smooth', action="store_true", help='The plot line will be smoothed with sliding box')
     total_parser.add_argument('-b', '--boxsize', type=int, default=11, help='The size of the sliding box from `--smooth`')
     total_parser.add_argument('-p', '--padding', type=int, default=11, help='Padding the data to prevent drop-off')
-    group.add_argument('-f', '--fancy-smooth', action="store_true", help='The plot line will be smoothed with the Savitzky-Golay filter')
+    group.add_argument('-fs', '--fancy-smooth', action="store_true", help='The plot line will be smoothed with the Savitzky-Golay filter')
     total_parser.add_argument('-wl', '--window-length', type=int, default=11, help='The length of the smoothing window for `--fancy-smooth`')
-    total_parser.add_argument('-p', '--polyorder', type=int, default=3, help='')
+    total_parser.add_argument('-po', '--polyorder', type=int, default=3, help='')
     total_parser.set_defaults(func=total_features)
 
 

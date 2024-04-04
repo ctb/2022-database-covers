@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+import sys
 import argparse
 from process_csv import pangenome_csv
 
@@ -52,4 +53,4 @@ def parse_args():
 
 
 if __name__=='__main__':
-     parse_args()
+    sys.exit(parse_args())
