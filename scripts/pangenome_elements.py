@@ -18,30 +18,30 @@ def pangenome_elements(data):
             elif nested_value == max_value:
                 max_count += 1  # Increment count for each occurrence of maximum value
 
-        core_threshold = 0.95 #0.95 is core , 90% is technically soft core
-        soft_core_threshold = 0.90
+        central_core_threshold = 0.95 #0.95 is core , 90% is technically soft core
+        external_core_threshold = 0.90
         shell_threshold = 0.10 #0.10
-        small_cloud_threshold = 0.01 # 0.0 is the full cloud, but trimming (0.001?) may be necessary to create the viz...?
-        cloud_threshold = 0.00
+        inner_cloud_threshold = 0.01 # 0.0 is the full cloud, but trimming (0.001?) may be necessary to create the viz...?
+        surface_cloud_threshold = 0.00
 
-        core = []
-        soft_core = []
+        central_core = []
+        external_core = []
         shell = []
-        small_cloud = []
-        cloud = []
+        inner_cloud = []
+        surface_cloud = []
 
         for nested_key, nested_value in nested_dict.items():
-            if nested_value >= max_value * core_threshold:
-                core.append((nested_key, nested_value))
-            if nested_value >= max_value * soft_core_threshold:
-                soft_core.append((nested_key, nested_value))
+            if nested_value >= max_value * central_core_threshold:
+                central_core.append((nested_key, nested_value))
+            if nested_value >= max_value * external_core_threshold:
+                external_core.append((nested_key, nested_value))
             if nested_value >= max_value * shell_threshold:
                 shell.append((nested_key, nested_value))
-            if nested_value >= max_value * small_cloud_threshold:
-                small_cloud.append((nested_key, nested_value))
-            if nested_value >= max_value * cloud_threshold:
-                cloud.append((nested_key, nested_value))
-        return nested_key, core, soft_core, shell, small_cloud, cloud
+            if nested_value >= max_value * inner_cloud_threshold:
+                inner_cloud.append((nested_key, nested_value))
+            if nested_value >= max_value * surface_cloud_threshold:
+                surface_cloud.append((nested_key, nested_value))
+        return nested_key, central_core, external_core, shell, inner_cloud, surface_cloud
 
 def main():
     p = argparse.ArgumentParser(description='Create pangenome elements from sourmash pangenome database')
