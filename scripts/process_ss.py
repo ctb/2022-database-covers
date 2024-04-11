@@ -19,7 +19,12 @@ def db_process(filename, k=31, lineage_name='None'):
     assert mf, "no matching sketches for given ksize!?"
 
     print(f"Looking for {lineage_name} signature")
-    
+
+    # CTB: could iterate over manifest, find matching row, and then
+    # load just that signature (if lineage_name is set). That would
+    # avoid loading all of the actual data, and just work off the
+    # manifest until a particular match was found.
+    # see https://github.com/sourmash-bio/sourmash/blob/latest/src/sourmash/sig/grep.py#L105C1-L105C56 code for idx.select picklist with sub_manifest.
     for n, ss in enumerate(db.signatures()):
 
         if lineage_name and n and n % 10 == 0:
@@ -29,14 +34,15 @@ def db_process(filename, k=31, lineage_name='None'):
 
         name = ss.name
 
-        if lineage_name and name == lineage_name:
-            mh = ss.minhash
-            hashes = mh.hashes
-            ss_dict[name] = hashes
-            
-            break
+        if lineage_name:
+            if name == lineage_name:
+                mh = ss.minhash
+                hashes = mh.hashes
+                ss_dict[name] = hashes
 
-        elif lineage_name is None:
+                print(f"Found match to {lineage_name} - exiting!")
+                break
+        else: # lineage_name is None:
             mh = ss.minhash
             hashes = mh.hashes
             ss_dict[name] = hashes
@@ -50,7 +56,11 @@ def db_process(filename, k=31, lineage_name='None'):
 
 def main():
     p = argparse.ArgumentParser(description='Read in sourmash pangenome database with lineage selection option')
-    p.add_argument('-d', '--data', metavar='SOURMASH_DATABASE', help='The sourmash pangenome database')
+    # @CTB comment: usually if an argument like a filename is required, you
+    # can just leave off the option and make it positional.
+    # alt, you need to make it required=True or else it will be set as
+    # default (None) if not provided.
+    p.add_argument('-d', '--data', metavar='SOURMASH_DATABASE', help='The sourmash pangenome database', required=True)
     p.add_argument('-k', '--ksize', type=int, default=31, help='The ksize of the sourmash pangenome database')
     p.add_argument('-l', '--lineage', help='The specific lineage to extract from the sourmash pangenome database (e.g. "s__Escherichia coli")')
     args = p.parse_args()
