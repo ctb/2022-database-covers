@@ -8,7 +8,7 @@ import pprint
 
 
 from pangenome_elements import CENTRAL_CORE, EXTERNAL_CORE, SHELL, \
-    INNER_CLOUD, SURFACE_CLOUD
+    INNER_CLOUD, SURFACE_CLOUD, NAMES
 
 
 def main():
@@ -40,13 +40,24 @@ def main():
         # do terrible things to the sketch now.
 
         counter_d = defaultdict(int)
+        total_classified = 0
         for hashval in hashes:
             classify = classify_d.get(hashval, -1)
             counter_d[classify] += 1
+            if classify >= 0:
+                total_classified += 1
 
-        print(csv_file)
-        pprint.pprint(counter_d)
+        print(f"For '{csv_file}', signature '{sketch.name}' contains:")
+        for int_id in sorted(NAMES):
+            name = NAMES[int_id]
+            count = counter_d.get(int_id)
+            percent = count / total_classified * 100
+            print(f"\t {count} ({percent:.1f}%) hashes are classified as {name}")
+
+        count = counter_d.get(-1)
+        print(f"\t ...and {count} hashes are NOT IN the csv file")
 
 
 if __name__ == '__main__':
     sys.exit(main())
+

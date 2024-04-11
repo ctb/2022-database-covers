@@ -12,6 +12,12 @@ SHELL=3
 INNER_CLOUD=4
 SURFACE_CLOUD=5
 
+NAMES = { CENTRAL_CORE: 'central core',
+          EXTERNAL_CORE: 'external core',
+          SHELL: 'shell',
+          INNER_CLOUD: 'inner cloud',
+          SURFACE_CLOUD: 'surface cloud' }
+
 
 def pangenome_elements(data):
     # get the pangenome elements of the dicts for each rank pangenome
