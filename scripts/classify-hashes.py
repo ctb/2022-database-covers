@@ -52,11 +52,13 @@ def main():
         for int_id in sorted(NAMES):
             name = NAMES[int_id]
             count = counter_d.get(int_id)
+            if count is None:
+                raise Exception("Count is None, check `-k` value matches in both files")
             percent = count / total_classified * 100
             print(f"\t {count} ({percent:.1f}%) hashes are classified as {name}")
 
         count = counter_d.get(-1)
-
+        pprint.pprint(count)
         classified_total_count = 0
         for (k,v) in counter_d.items():
             if k >= 0:
@@ -64,10 +66,11 @@ def main():
 
         total_count = 0
         for (k,v) in counter_d.items(): total_count += v 
+        assert total_count > 0
 
         percent = count / total_count * 100
 
-        print(f"\t ...and {classified_total_count} ({classified_total_count/total_count:.3f}%) hashes are in the {csv_file}")
+        print(f"\t ...and {classified_total_count} ({classified_total_count/total_count*100:.1f}%) hashes are in the {csv_file}")
         print(f"\t ...and {count} ({percent:.1f}%) hashes are NOT IN the {csv_file}")
 
 
