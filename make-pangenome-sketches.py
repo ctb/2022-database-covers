@@ -22,6 +22,7 @@ def main():
     )
     p.add_argument('--scaled', default=1000, type=int)
     p.add_argument('-k', '--ksize', default=31, type=int)
+    p.add_argument('-m', '--moltype')
     p.add_argument('-o', '--output', required=True,
                     help='Define a filename for the pangenome signatures (.zip preferred).')
     p.add_argument('--csv', help='A CSV file generated to contain the lineage rank, genome name, hash count, and genome count.')
@@ -60,7 +61,24 @@ def main():
             ident = tax_utils.get_ident(name)
 
             # grab relevant lineage name
-            lineage_tup = taxdb[ident]
+            try:
+                lineage_tup = taxdb[ident]
+            except KeyError:
+                try:
+                    if '.' in ident:
+                        short_ident = ident.split('.')[0]
+                        lineage_tup = taxdb[short_ident]
+                    else:
+                        for i in range(1,10):
+                            try:
+                                new_ident = f"{ident}.{i}"
+                                lineage_tup = taxdb[new_ident]
+                                break
+                            except KeyError:
+                                continue
+                except:
+                    print("Wow, that sucks!")
+
             lineage_tup = tax_utils.RankLineageInfo(lineage=lineage_tup)
             lineage_pair = lineage_tup.lineage_at_rank(args.rank)
             lineage_name = lineage_pair[-1].name
@@ -139,8 +157,8 @@ def check_csv(csv_file):
     if csv_file is None:
         return
 
-    if os.path.exists(count_csv):
-        raise argparse.ArgumentTypeError("\n%s already exists" % count_csv)
+    if os.path.exists(csv_file):
+        raise argparse.ArgumentTypeError("\n%s already exists" % csv_file)
 
     count_csv = os.path.splitext(csv_file)[0] + ".csv"
     return count_csv
