@@ -30,9 +30,42 @@ from pangenome_elements import CENTRAL_CORE, EXTERNAL_CORE, SHELL, \
     INNER_CLOUD, SURFACE_CLOUD, NAMES
 
 
-#def read_pangenome_csv():
-    
+def read_pangenome_csv(csv_file):
+     with open(csv_file, 'r', newline='') as fp:
+         r = csv.DictReader(fp)
 
+         classify_d = {}
+         for row in r:
+             hashval = int(row['hashval'])
+             classify_as = int(row['pangenome_classification'])
+             if classify_as in classify_d:
+                 classify_d[classify_as].append(hashval)
+             else:
+                 classify_d[classify_as] = [hashval]
+
+     return classify_d
+
+def create_pangenome_dict(results):
+    # Results are from the pangenome_elements() 
+    central_core, external_core, shell, inner_cloud, surface_cloud = results
+
+    classify_d = {}
+    for xx, classify_code in (
+            (central_core, CENTRAL_CORE),
+            (external_core, EXTERNAL_CORE),
+            (shell, SHELL),
+            (inner_cloud, INNER_CLOUD),
+            (surface_cloud, SURFACE_CLOUD)
+            ):
+        for hashval, _ in xx:
+            if classify_code in classify_d:
+                classify_d[classify_code].append(hashval)
+            else:
+                classify_d[classify_code] = [hashval]
+    #compare `awk -F',' '$2 == 1 {print}' ecoli.csv | wc -l` to print statement below
+    #print(len(classify_d[1]))                   
+    return classify_d
+   
 
 #def pan_meta_compare():
 
@@ -45,7 +78,7 @@ def main():
 # pangenome_elements    
 
     p = argparse.ArgumentParser(description='Create pangenome elements from sourmash pangenome database')
-    p.add_argument('data', metavar='SOURMASH_DATABASE', help='The sourmash dictionary created from `process_ss.py`')
+    p.add_argument('-d', '--data', metavar='SOURMASH_DATABASE', help='The sourmash dictionary created from `make_pangneome_sketches.py`')
     p.add_argument('-c', '--csv', metavar='CLASSIFIED_HASH_CSV', help='The CSV file containing pangenomic classification for each hash')
     p.add_argument('-k', '--ksize', type=int, default=31, help='The ksize of the sourmash pangenome database')
     p.add_argument('-l', '--lineage', help='The specific lineage to extract from the sourmash pangenome database (e.g. "s__Escherichia coli")')
@@ -55,40 +88,14 @@ def main():
 
 
     if args.csv:
-        with open(args.csv, 'r', newline='') as fp:
-            r = csv.DictReader(fp)
-
-            classify_d = {}
-            for row in r:
-                hashval = int(row['hashval'])
-                classify_as = int(row['pangenome_classification'])
-                classify_d[hashval] = classify_as
-        print(classify_d)
-
+        pangenome_dict = read_pangenome_csv(args.csv)
     else:
-
         ss_dict = db_process(filename=args.data, k=args.ksize, lineage_name=args.lineage, ignore_case=args.ignore_case, invert_match=False)
         results = pangenome_elements(data=ss_dict)
-        central_core, external_core, shell, inner_cloud, surface_cloud = results
+        pangenome_dict = create_pangenome_dict(results)
 
-        classify_d = {}
-        for xx, classify_code in (
-                (central_core, CENTRAL_CORE),
-                (external_core, EXTERNAL_CORE),
-                (shell, SHELL),
-                (inner_cloud, INNER_CLOUD),
-                (surface_cloud, SURFACE_CLOUD)
-                ):
-            for hashval, _ in xx:
-                if classify_code in classify_d:
-                    classify_d[classify_code].append(hashval)
-                else:
-                    classify_d[classify_code] = [hashval]
-        #print(classify_d[1])
-
-        print(len(classify_d[1]))                   
-
-
+    # quick test to check that both functions return the same values
+    #print(pangenome_dict[1][:10])
 
 if __name__=="__main__":
     sys.exit(main())
