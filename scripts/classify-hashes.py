@@ -54,7 +54,7 @@ def main():
                 central_core_mh.add_hash(hashval)
             elif classify == SHELL:
                 shell_mh.add_hash(hashval)
-                
+ 
 
         print(f"For '{csv_file}', signature '{sketch.name}' contains:")
         for int_id in sorted(NAMES):
