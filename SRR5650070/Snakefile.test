@@ -2,7 +2,8 @@ rule all:
     input:
         "test_output/agathobacter_faecis.csv",
         "test_output/SRR5650070.x.gtdb-rs214-agatha.gather.txt",
-
+        "test_output/agathobacter_faecis_abunds.png",
+        "test_output/agathobacter_faecis_hashes.txt",
 
 rule fastgather:
     input:
@@ -20,7 +21,8 @@ rule gather:
         sketch="SRR5650070.trim.sig.zip",
         db="gtdb-rs214-agatha-k21.zip",
         fastgather_out="test_output/SRR5650070.x.gtdb-rs214-agatha.fastgather.csv",
-        hash_csv="test_output/agathobacter_faecis.csv",
+        # @CTB switch over to test_output one, later
+        hash_csv="agathobacter_faecis.csv",
     output:
         csv="test_output/SRR5650070.x.gtdb-rs214-agatha.gather.csv",
         txt="test_output/SRR5650070.x.gtdb-rs214-agatha.gather.txt",
@@ -30,7 +32,7 @@ rule gather:
             > {output.txt}
     """
 
-rule classify_hashes:
+rule build_classify_hashes:
     input:
         pangenome_sig="../agatha-merged.sig.zip",
     output:
@@ -41,4 +43,25 @@ rule classify_hashes:
     shell: """
         ../scripts/pangenome_elements.py -d {input.pangenome_sig} \
              -o {output.csv} -k {params.ksize} -l {params.name:q}
+    """
+
+rule pangenome_classify:
+    input:
+        sig="SRR5650070.trim.sig.zip",
+        hash_csv="agathobacter_faecis.csv",
+    output:
+        "test_output/agathobacter_faecis_hashes.txt",
+    shell: """
+        ../scripts/classify-hashes.py {input.sig} {input.hash_csv} \
+            -k 21 > {output}
+    """
+rule pangenome_abundhist:
+    input:
+        sig="SRR5650070.trim.sig.zip",
+        hash_csv="agathobacter_faecis.csv",
+    output:
+        "test_output/agathobacter_faecis_abunds.png",
+    shell: """
+        ../scripts/classify-hashes-abundhist.py {input.sig} {input.hash_csv} \
+            -k 21 -o {output} -M 600
     """

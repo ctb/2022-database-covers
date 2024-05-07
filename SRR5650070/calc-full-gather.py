@@ -212,13 +212,18 @@ def main():
             if classify >= 0:
                 total_classified += 1
         
-        print(len(result.gather_comparison.intersect_mh))
+        #print(len(result.gather_comparison.intersect_mh))
 
+        x = []
         for int_id in sorted(NAMES):
             name = NAMES[int_id]
             count = counter_d.get(int_id, 0)
             percent = count / total_classified * 100
-            print(f"\t {count} ({percent:.1f}%) hashes are classified as {name}")
+            x.append(f"{count} ({percent:.1f}%) {name}")
+#            print(f"\t {count} ({percent:.1f}%) hashes are classified as {name}")
+        print("=>", " / ".join(x[:3]))
+        print("  ", " / ".join(x[3:]))
+        print("")
 
         # write out
         if result_writer is None:
