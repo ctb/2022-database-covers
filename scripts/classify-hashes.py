@@ -66,12 +66,12 @@ def main():
         count = counter_d.get(-1, 0)
         print(f"\t ...and {count} hashes are NOT IN the csv file")
 
-        core_ss = sourmash.SourmashSignature(central_core_mh, name='core')
-        with SaveSignaturesToLocation('core.sig.gz') as save_sig:
-            save_sig.add(core_ss)
-        shell_ss = sourmash.SourmashSignature(shell_mh, name='shell')
-        with SaveSignaturesToLocation('shell.sig.gz') as save_sig:
-            save_sig.add(shell_ss)
+        #core_ss = sourmash.SourmashSignature(central_core_mh, name='core')
+        #with SaveSignaturesToLocation('core.sig.gz') as save_sig:
+        #    save_sig.add(core_ss)
+        #shell_ss = sourmash.SourmashSignature(shell_mh, name='shell')
+        #with SaveSignaturesToLocation('shell.sig.gz') as save_sig:
+        #    save_sig.add(shell_ss)
 
 
 if __name__ == '__main__':

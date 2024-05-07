@@ -58,7 +58,7 @@ def main():
                    help='pickled dictionary containing classification of each hash')
     args = p.parse_args()
 
-    ss_dict = db_process(filename=args.data, k=args.ksize, lineage_name=args.lineage)
+    ss_dict = db_process(filename=args.data, k=args.ksize, lineage_name=args.lineage, invert_match=False, ignore_case=False)
     results = pangenome_elements(data=ss_dict)
 
     if args.output_hash_classification:
