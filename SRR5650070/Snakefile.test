@@ -27,7 +27,7 @@ rule gather:
         csv="test_output/SRR5650070.x.gtdb-rs214-agatha.gather.csv",
         txt="test_output/SRR5650070.x.gtdb-rs214-agatha.gather.txt",
     shell: """
-        ./calc-full-gather.py {input.sketch} {input.db} \
+        ../scripts/recalc-gather-pangenome.py {input.sketch} {input.db} \
             {input.fastgather_out} {input.hash_csv} -o {output.csv} \
             > {output.txt}
     """
