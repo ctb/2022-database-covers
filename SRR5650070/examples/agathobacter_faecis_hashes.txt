@@ -1,0 +1,7 @@
+For 'agathobacter_faecis.csv', signature 'SRR5650070' contains:
+	 497 (12.5%) hashes are classified as central core
+	 427 (10.8%) hashes are classified as external core
+	 1791 (45.2%) hashes are classified as shell
+	 1251 (31.5%) hashes are classified as inner cloud
+	 0 (0.0%) hashes are classified as surface cloud
+	 ...and 262716 hashes are NOT IN the csv file

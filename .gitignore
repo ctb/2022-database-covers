@@ -1,2 +1,4 @@
 *~
 *.zip
+.snakemake
+__pycache__

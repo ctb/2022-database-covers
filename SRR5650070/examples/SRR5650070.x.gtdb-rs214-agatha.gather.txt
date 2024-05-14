@@ -1,0 +1,271 @@
+loaded 66 results.
+ksize=21, scaled=1000
+
+overlap     p_query p_match avg_abund
+---------   ------- ------- ---------
+2.4 Mbp       17.0%   78.1%     293.6    GCF_001406815.1 Roseburia faecis str...
+=> 495 (20.3%) central core / 423 (17.4%) external core / 1324 (54.4%) shell
+   194 (8.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.3 Mbp        1.9%   10.0%     213.9    GCF_015558055.1 Roseburia faecis str...
+=> 2 (0.5%) central core / 4 (1.1%) external core / 229 (62.2%) shell
+   133 (36.1%) inner cloud / 0 (0.0%) surface cloud
+
+2.2 Mbp        1.0%    5.3%     234.7    GCF_020557615.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 99 (54.4%) shell
+   83 (45.6%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.4%    3.3%     139.6    GCA_017850695.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 56 (45.2%) shell
+   68 (54.8%) inner cloud / 0 (0.0%) surface cloud
+
+2.2 Mbp        0.6%    2.5%     285.6    GCF_009718425.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 20 (22.7%) shell
+   68 (77.3%) inner cloud / 0 (0.0%) surface cloud
+
+1.8 Mbp        0.2%    1.9%     138.8    GCA_022716455.1 Lachnobacterium sp.,...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 15 (20.3%) shell
+   59 (79.7%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.2%    2.2%     107.3    GCA_014870185.1 Agathobacter sp., AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 19 (29.7%) shell
+   45 (70.3%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.1%    1.6%      54.3    GCA_900557055.1 uncultured Lachnobac...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 5 (9.3%) shell
+   49 (90.7%) inner cloud / 0 (0.0%) surface cloud
+
+1.8 Mbp        0.2%    2.0%     165.3    GCA_008672265.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 6 (12.2%) shell
+   43 (87.8%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.3%    1.4%     231.3    GCA_902399895.1 Lachnospiraceae bact...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 1 (2.1%) shell
+   46 (97.9%) inner cloud / 0 (0.0%) surface cloud
+
+2.2 Mbp        0.1%    1.1%     115.5    GCF_015549075.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 2 (5.4%) shell
+   35 (94.6%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    1.0%       7.7    GCA_014870225.1 Agathobacter sp., AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   27 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.3 Mbp        0.1%    0.7%     118.7    GCF_005845255.1 Roseburia hominis st...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   24 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.1%    0.7%     188.0    GCA_019410305.1 Lachnospiraceae bact...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 3 (13.0%) shell
+   20 (87.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.1%    0.7%     199.1    GCA_008672555.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   20 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    0.7%      37.9    GCA_002472415.1 Lachnospiraceae bact...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 1 (5.0%) shell
+   19 (95.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.8 Mbp        0.0%    0.5%      62.1    GCA_022728575.1 Roseburia sp., ASM22...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   19 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.1 Mbp        0.1%    0.5%     118.4    GCF_015667215.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 2 (11.1%) shell
+   16 (88.9%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.1%    0.6%     165.0    GCA_014866535.1 Agathobacter sp., AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 1 (6.2%) shell
+   15 (93.8%) inner cloud / 0 (0.0%) surface cloud
+
+2.2 Mbp        0.0%    0.4%     104.5    GCF_015556245.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 1 (6.7%) shell
+   14 (93.3%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.0%    0.5%      20.4    GCA_902791615.1 uncultured Lachnospi...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   14 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.0%    0.4%       8.8    GCA_022742735.1 Roseburia sp., ASM22...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   14 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.0%    0.5%      97.1    GCA_934836235.1 Roseburia faecis, MT...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 6 (42.9%) shell
+   8 (57.1%) inner cloud / 0 (0.0%) surface cloud
+
+2.2 Mbp        0.1%    0.3%     193.7    GCF_020537425.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   12 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    0.4%      46.8    GCA_934317655.1 uncultured Agathobac...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 1 (8.3%) shell
+   11 (91.7%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.4%     184.1    GCA_003525405.1 Roseburia sp., ASM35...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   11 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.4%      66.9    GCA_014870235.1 Agathobacter sp., AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   10 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.2 Mbp        0.1%    0.3%     236.2    GCF_015550045.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   10 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.4%     130.1    GCA_023452515.1 Firmicutes bacterium...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   10 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    0.4%      26.6    GCA_022738355.1 Lachnobacterium sp.,...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   10 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.0%    0.4%      65.4    GCA_021637285.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   9 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    0.3%      66.9    GCA_022716675.1 Lachnobacterium sp.,...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   9 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.5 Mbp        0.0%    0.3%      44.1    GCA_008667815.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   8 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.3 Mbp        0.0%    0.2%      97.2    GCF_015559645.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   8 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.2%      54.1    GCA_021623445.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   7 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    0.2%     132.3    GCA_945872345.1 uncultured Lachnobac...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   7 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.2 Mbp        0.0%    0.2%      74.7    GCF_001405615.1 Roseburia faecis str...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   7 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.3%      40.3    GCA_023413175.1 Firmicutes bacterium...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   7 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.0%    0.3%     115.4    GCA_934296395.1 uncultured Agathobac...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   7 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.2%      27.5    GCA_003491515.1 Roseburia sp., ASM34...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   6 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.1 Mbp        0.0%    0.2%     171.6    GCA_928721815.1 Roseburia faecis, mi...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   5 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.5 Mbp        0.0%    0.2%     196.2    GCA_900313095.1 uncultured Lachnospi...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   5 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.1 Mbp        0.0%    0.2%       5.2    GCA_934828565.1 Roseburia faecis, MT...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   5 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    0.2%      65.8    GCA_021632615.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   4 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.0%    0.1%      21.2    GCA_022744485.1 Roseburia sp., ASM22...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   4 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.4 Mbp        0.0%    0.2%      10.5    GCA_018059505.1 Agathobacter sp., AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   4 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.1%       2.7    GCA_905208855.1 Lachnospiraceae bact...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   3 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.0%    0.1%      54.0    GCA_934825565.1 Roseburia faecis, MT...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   3 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.0%    0.1%       1.0    GCA_934294595.1 uncultured Agathobac...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   3 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.8 Mbp        0.0%    0.1%     105.3    GCA_934848775.1 Roseburia faecis, MT...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   3 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.1 Mbp        0.0%    0.2%       3.3    GCA_018063845.1 Agathobacter sp., AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   3 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.1%     123.3    GCA_014866495.1 Agathobacter sp., AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   3 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.3 Mbp        0.0%    0.1%      30.3    GCA_004552255.1 [Eubacterium] rectal...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   3 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.0%    0.1%      52.7    GCA_023446195.1 Firmicutes bacterium...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   3 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    0.1%       1.5    GCA_021616915.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   2 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.1 Mbp        0.0%    0.1%       1.0    GCA_008680325.1 Firmicutes bacterium...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   2 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.8 Mbp        0.0%    0.1%      13.5    GCA_934876035.1 Roseburia faecis, MT...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   2 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.6 Mbp        0.0%    0.1%      33.0    GCA_902762825.1 uncultured Lachnospi...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   2 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.7 Mbp        0.0%    0.1%      15.5    GCA_934838275.1 Roseburia faecis, MT...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   2 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.9 Mbp        0.0%    0.1%       1.5    GCA_000433615.1 Roseburia sp. CAG:18...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   2 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.2 Mbp        0.0%    0.1%       1.0    GCA_017634195.1 Agathobacter sp., AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   1 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.0%    0.0%       1.0    GCA_934876625.1 Roseburia faecis, MT...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   1 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.8 Mbp        0.0%    0.0%       2.0    GCA_934834765.1 Roseburia faecis, MT...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   1 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.0%    0.0%     228.0    GCA_018366895.1 Roseburia sp., ASM18...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   1 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+2.0 Mbp        0.0%    0.0%       1.0    GCA_003447335.1 Roseburia sp., ASM34...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   1 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+1.5 Mbp        0.0%    0.0%     221.0    GCA_022780885.1 Roseburia faecis, AS...
+=> 0 (0.0%) central core / 0 (0.0%) external core / 0 (0.0%) shell
+   1 (100.0%) inner cloud / 0 (0.0%) surface cloud
+
+the recovered matches hit 22.8% of the abundance-weighted query.
+the recovered matches hit 1.5% of the query k-mers (unweighted).
