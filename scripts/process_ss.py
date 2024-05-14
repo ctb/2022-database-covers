@@ -8,7 +8,7 @@ import os
 import re
 
 
-def db_process(filename, ignore_case, invert_match, user_input, process_db, k=31, lineage_name='None'):
+def db_process(filename, ignore_case=False, invert_match=False, user_input=False, process_db=False, k=31, lineage_name='None'):
     bname = os.path.basename(filename)
     ss_dict = {}
     print(f"\nloading file {bname} as index => manifest")
