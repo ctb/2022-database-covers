@@ -59,7 +59,7 @@ def main():
                    help='CSV file containing classification of each hash')
     args = p.parse_args()
 
-    ss_dict = db_process(filename=args.data, k=args.ksize, lineage_name=args.lineage, ignore_case=args.ignore_case, invert_match=False)
+    ss_dict = db_process(filename=args.data, k=args.ksize, lineage_name=args.lineage, ignore_case=args.ignore_case)
     results = pangenome_elements(data=ss_dict)
 
     if args.output_hash_classification:

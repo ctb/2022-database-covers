@@ -64,7 +64,19 @@ def main():
             print(f"\t {count} ({percent:.1f}%) hashes are classified as {name}")
 
         count = counter_d.get(-1, 0)
-        print(f"\t ...and {count} hashes are NOT IN the csv file")
+        classified_total_count = 0
+        for (k,v) in counter_d.items():
+            if k >= 0:
+                classified_total_count += v
+
+        total_count = 0
+        for (k,v) in counter_d.items(): total_count += v 
+        assert total_count > 0
+
+        percent = count / total_count * 100
+
+        print(f"\t ...and {classified_total_count} ({classified_total_count/total_count*100:.1f}%) hashes are in the {csv_file}")
+        print(f"\t ...and {count} ({percent:.1f}%) hashes are NOT IN the {csv_file}")
 
         #core_ss = sourmash.SourmashSignature(central_core_mh, name='core')
         #with SaveSignaturesToLocation('core.sig.gz') as save_sig:
