@@ -63,7 +63,7 @@ def main():
             # grab relevant lineage name
             try:
                 lineage_tup = taxdb[ident]
-            except KeyError:
+            except KeyError: # older versions of genbank are not named with version!
                 try:
                     if '.' in ident:
                         short_ident = ident.split('.')[0]

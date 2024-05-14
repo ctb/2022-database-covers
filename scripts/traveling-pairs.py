@@ -176,7 +176,6 @@ def main():
             if hashval in common_keys:
                 hash_counts = counts[hashval]
                 for h in minhash.hashes:
-                    #hash_counts[h] += 1
                     hash_counts[h] = hash_counts.get(h, 0) + 1 # get the minhash hash and add 1 if in hashval key:value. If not, set to 0
             #else:
             #    hash_counts = counts[hashval]
