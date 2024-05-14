@@ -2,7 +2,7 @@
 
 import sourmash
 from sourmash import sourmash_args
-from sourmash.logging import notify
+#from sourmash.logging import notify, error
 import argparse
 import sys
 import os
@@ -43,9 +43,52 @@ def db_process(filename, ignore_case, invert_match, k=31, lineage_name='None'):
         sub_mf = mf.filter_on_columns(
             search_pattern, ["name", "filename", "md5"]
             )
-        total_rows_examined = 0
-        total_rows_examined += len(mf)
     
+        #from pprint import pprint; pprint(vars(sub_mf)) #dir()
+        #pprint(sub_mf.rows[12])   
+
+        selected_sigs = []
+        print(f'Found {len(sub_mf)} signatures in {bname}:')
+        for n, row in enumerate(sub_mf.rows, start=1):
+            print(f'{n:<15} \033[0;31m{row.get('name')}\033[0m')
+            selected_sigs.append(row.get('name'))
+
+        while True:
+            user_input = input('\nSelect signatures to process (Comma-separated index value, "all", or "quit"): ')
+
+            if user_input.strip().lower() == 'quit' or user_input.strip().lower() == 'q':
+                print("Exiting...")
+                sys.exit(0)
+
+            if user_input.strip().lower() == 'all' or user_input.strip().lower() == 'a':
+                break
+
+            else:
+                try:
+                    #create a list of only digits no matter if letters or additional commas
+                    indices = [int(idx.strip()) for idx in user_input.split(',') if idx.strip().isdigit()]
+                    if not indices:
+                        raise ValueError("Invalid input string: Please enter a comma-separated integer list, 'all', or 'quit'.")
+
+                    outlier = [idx for idx in indices if not 1 <= idx <= len(selected_sigs)]
+
+                    if outlier:
+                        raise ValueError(f"Out of range integers: {", ".join([str(item) for item in outlier])}")
+
+                    indices = [n - 1 for n in indices]
+                    selected_names = [selected_sigs[n] for n in indices]
+
+                    def search_name(vals):
+                        return any(val in selected_names for val in vals)
+
+                    sub_mf = sub_mf.filter_on_columns(search_name, ["name"])
+
+                    break
+                except Exception as e:
+                    print(f'{e}')
+                    continue
+            
+
         sub_picklist = sub_mf.to_picklist()
     
         try:
@@ -61,16 +104,17 @@ def db_process(filename, ignore_case, invert_match, k=31, lineage_name='None'):
             mh = ss.minhash
             hashes = mh.hashes
             ss_dict[name] = hashes
+
+        total_rows_examined = 0
+        total_rows_examined += len(mf)
     
-        notify(f"\nloaded {total_rows_examined} total that matched ksize & molecule type")
+        print(f"\nloaded {total_rows_examined} total that matched ksize & molecule type")
     
         if ss_dict:
-            notify(
-                f"extracted {len(ss_dict)} signatures from {len(db)} file(s)\n"
-            )
+            print(f"extracted {len(ss_dict)} signatures from {len(db)} file(s)\n")
             
         else:
-            error("no matching signatures found!\n")
+            print("no matching signatures found!\n")
             sys.exit(-1)
 
     else:
