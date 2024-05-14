@@ -51,14 +51,15 @@ def pangenome_elements(data):
 
 def main():
     p = argparse.ArgumentParser(description='Create pangenome elements from sourmash pangenome database')
-    p.add_argument('-d', '--data', metavar='SOURMASH_DATABASE', help='The sourmash dictionary created from `process_ss.py`', required=True)
+    p.add_argument('data', metavar='SOURMASH_DATABASE', help='The sourmash dictionary created from `process_ss.py`')
     p.add_argument('-k', '--ksize', type=int, default=31, help='The ksize of the sourmash pangenome database')
     p.add_argument('-l', '--lineage', help='The specific lineage to extract from the sourmash pangenome database (e.g. "s__Escherichia coli")')
+    p.add_argument('-i', '--ignore-case', action='store_true', help='Ignore the casing of search terms')
     p.add_argument('-o', '--output-hash-classification', required=False,
-                   help='pickled dictionary containing classification of each hash')
+                   help='CSV file containing classification of each hash')
     args = p.parse_args()
 
-    ss_dict = db_process(filename=args.data, k=args.ksize, lineage_name=args.lineage, invert_match=False, ignore_case=False)
+    ss_dict = db_process(filename=args.data, k=args.ksize, lineage_name=args.lineage, ignore_case=args.ignore_case, invert_match=False)
     results = pangenome_elements(data=ss_dict)
 
     if args.output_hash_classification:
