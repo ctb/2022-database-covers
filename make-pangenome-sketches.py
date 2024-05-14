@@ -22,7 +22,7 @@ def main():
     )
     p.add_argument('--scaled', default=1000, type=int)
     p.add_argument('-k', '--ksize', default=31, type=int)
-    p.add_argument('-m', '--moltype')
+    p.add_argument('-m', '--moltype') # Use to assert that the moltype in the sketches == moltype use wants
     p.add_argument('-o', '--output', required=True,
                     help='Define a filename for the pangenome signatures (.zip preferred).')
     p.add_argument('--csv', help='A CSV file generated to contain the lineage rank, genome name, hash count, and genome count.')
