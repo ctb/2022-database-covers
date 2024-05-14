@@ -48,7 +48,7 @@ def db_process(filename, ignore_case, invert_match, user_input, process_db, k=31
         print(f'Found {len(sub_mf)} signatures in {bname}:')
 
         for n, row in enumerate(sub_mf.rows, start=1):
-            print(f'{n:<15} \033[0;31m{row.get('name')}\033[0m')
+            print(f'{n:<15} \033[0;31m{row.get("name")}\033[0m')
             selected_sigs.append(row.get('name'))
 
 
@@ -73,7 +73,7 @@ def db_process(filename, ignore_case, invert_match, user_input, process_db, k=31
                         outlier = [idx for idx in indices if not 1 <= idx <= len(selected_sigs)]
 
                         if outlier:
-                            raise ValueError(f"Out of range integers: {", ".join([str(item) for item in outlier])}")
+                            raise ValueError(f'Out of range integers: {", ".join([str(item) for item in outlier])}')
 
                         indices = [n - 1 for n in indices]
                         selected_names = [selected_sigs[n] for n in indices]

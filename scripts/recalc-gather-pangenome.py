@@ -39,7 +39,7 @@ def get_ident(name):
 
 def zipfile_load_ss_from_row(db, row):
     data = db.storage.load(row['internal_location'])
-    sigs = sourmash.signature.load_signatures(data)
+    sigs = sourmash.load_signatures(data)
 
     return_sig = None
     for ss in sigs:
